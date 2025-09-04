@@ -1,4 +1,4 @@
--- Active: 1756808197288@@127.0.0.1@5432@meu_banco
+-- Active: 1756808197288@@127.0.0.1@5432@alura
 CREATE DATABASE alura;
 
 CREATE TABLE aluno (
