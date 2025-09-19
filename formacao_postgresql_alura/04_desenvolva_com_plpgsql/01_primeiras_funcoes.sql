@@ -5,7 +5,6 @@ CREATE FUNCTION primeira_funcao() RETURNS INTEGER AS '
 
 SELECT * FROM primeira_funcao() AS numero
 
-
 -- Recebendo parâmetros com nomes definidos (melhor prática)
 CREATE FUNCTION soma_dois_numeros(numero_1 INTEGER, numero_2 INTEGER) RETURNS INTEGER AS '
     SELECT numero_1 + numero_2
@@ -27,7 +26,6 @@ LANGUAGE SQL
 RETURN a + b;
 
 SELECT * FROM multiplicacao(2, 4)
-
 
 -- Função teste que fiz
 CREATE FUNCTION select_year(date DATE) RETURNS INTEGER
