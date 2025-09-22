@@ -21,7 +21,7 @@ FROM instrutor
 -- Sintáxe melhor -> colocando do lado do CASE o que quero comparar
 CREATE OR REPLACE FUNCTION status_salario(instrutor instrutor) RETURNS VARCHAR AS $$
     BEGIN
-        CASE instutor.salario
+        CASE instrutor.salario
             WHEN 100 THEN
                 RETURN 'Salário muito baixo';
             WHEN 200 THEN
@@ -33,3 +33,8 @@ CREATE OR REPLACE FUNCTION status_salario(instrutor instrutor) RETURNS VARCHAR A
         END CASE;
     END
 $$ LANGUAGE PLPGSQL;
+
+SELECT
+    nome,
+    status_salario(instrutor)
+FROM instrutor
