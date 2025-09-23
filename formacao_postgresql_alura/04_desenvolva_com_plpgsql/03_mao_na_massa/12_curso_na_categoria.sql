@@ -1,3 +1,10 @@
+/* Criar uma função que insira um curso em determinada categoria. 
+Porém, o que vamos informar não é o id da categoria, mas sim um nome.
+Se uma categoria com esse nome já existir, utilizaremos apenas o id. 
+Caso não exista ainda uma categoria com esse nome, criaremos uma 
+categoria para só depois criar o curso.
+*/
+
 -- Minha resolução
 CREATE OR REPLACE FUNCTION criar_curso(nome_curso VARCHAR, nome_categoria VARCHAR) RETURNS void AS $$
     DECLARE
