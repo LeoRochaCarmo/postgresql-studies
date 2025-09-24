@@ -15,6 +15,7 @@ CREATE OR REPLACE FUNCTION inserir_instrutor() RETURNS TRIGGER AS $$
         
         INSERT INTO log_instrutores(informacao) VALUES(FORMAT('%1$s recebe mais do que %2$s%% da grade de instrutores', NEW.nome, porcentagem));
 
+        RETURN NEW;
     END;
 
 $$ LANGUAGE PLPGSQL;
