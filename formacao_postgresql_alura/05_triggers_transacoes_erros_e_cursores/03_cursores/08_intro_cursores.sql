@@ -1,8 +1,7 @@
-CREATE FUNCTION instrutores_internos(id_instrutor INTEGER) RETURNS refcursor AS $$
+CREATE OR REPLACE FUNCTION instrutores_internos(id_instrutor INTEGER) RETURNS refcursor AS $$
     DECLARE
         cursor_salarios refcursor;
         -- cursor_salarios CURSOR FOR SELECT instrutor.salario FROM instrutor WHERE id <> id_instrutor AND salario > 0;
-        salario DECIMAL;
     BEGIN
         -- abertura do cursor
         OPEN cursor_salarios FOR 
@@ -21,6 +20,6 @@ CREATE FUNCTION instrutores_internos(id_instrutor INTEGER) RETURNS refcursor AS 
         MOVE LAST FROM cursor_salarios; -- move o ponteiro mas não busca nenhum valor
         */
         
-        RETURN cursor_salarios
+        RETURN cursor_salarios;
     END;
 $$ LANGUAGE PLPGSQL;
