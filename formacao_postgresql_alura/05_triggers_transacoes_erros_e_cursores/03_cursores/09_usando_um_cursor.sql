@@ -48,7 +48,7 @@ CREATE OR REPLACE FUNCTION inserir_instrutor() RETURNS TRIGGER AS $$
             END IF; 
         END LOOP;
 
-        percentual = instrutores_recebem_menos / total_instrutores * 100;
+        percentual = instrutores_recebem_menos::DECIMAL / total_instrutores::DECIMAL * 100;
         ASSERT percentual < 100, 'Salário fora do teto salarial';
         
         INSERT INTO log_instrutores(informacao) 
